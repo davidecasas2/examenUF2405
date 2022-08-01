@@ -36,16 +36,16 @@ public class CentrosServlet extends HttpServlet {
 		String opcion = request.getParameter("opcion");
 		if (opcion ==null || opcion.equals("listado")) {
 			mostrarListado(request,response);
-		} else if (opcion.equals("nuevo")) {
-			mostrarFormulario(request,response);
+		/*} else if (opcion.equals("nuevo")) {
+			mostrarFormulario(request,response);*/
 		} else if (opcion.equals("eliminar")) {
 			eliminar(request,response);
-		} else if (opcion.equals("editar")) {
-			editar(request,response);
+		/*} else if (opcion.equals("editar")) {
+			editar(request,response); */
 		}
 	}
 
-	private void editar(HttpServletRequest request, HttpServletResponse response) 
+	/*private void editar(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		int codCentro = Integer.parseInt(request.getParameter("codCentro"));
 		CentroDAO dao = new CentroDAOJDBC();
@@ -53,7 +53,7 @@ public class CentrosServlet extends HttpServlet {
 		request.setAttribute("centro", centro);
 		request.getRequestDispatcher("/centros/editar.jsp").forward(request, response);
 	
-	}
+	}*/
 
 	private void eliminar(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
@@ -81,15 +81,15 @@ public class CentrosServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String opcion = request.getParameter("opcion");
+		/*String opcion = request.getParameter("opcion");
 		if (opcion !=null && opcion.equals("insertar")) {
 			insertar(request,response);
 		} else if (opcion!=null && opcion.equals("editar")) {
 			actualizar(request,response);
-		}
+		}*/
 	}
 
-	private void actualizar(HttpServletRequest request, HttpServletResponse response) 
+	/*private void actualizar(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
 		
@@ -103,9 +103,9 @@ public class CentrosServlet extends HttpServlet {
 		dao.actualizarCentro(centro);
 		mostrarListado(request, response);
 		
-	}
+	}*/
 
-	private void insertar(HttpServletRequest request, HttpServletResponse response) 
+	/*private void insertar(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		int codCentro =Integer.parseInt(request.getParameter("codCentro"));
 		String nombre = request.getParameter("nombre");
@@ -117,6 +117,6 @@ public class CentrosServlet extends HttpServlet {
 		dao.insertarCentro(centro);
 		mostrarListado(request, response);
 		
-	}
+	}*/
 
 }
